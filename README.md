@@ -1,6 +1,6 @@
 # crowdin-discord-webhook
 
-Cloudflare worker for forwarding Crowdin webhooks to Discord.
+Cloudflare worker for forwarding Crowdin events to Discord.
 
 To use this project, you do not need to host it, you can simply follow the simple instructions [here](#usage).
 But if you wish to run your own, I have also included the instructions for that, too, and they can be found [here](#self-hosting).

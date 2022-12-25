@@ -1,4 +1,4 @@
-export interface CrowdinAPIResponse {
+export interface Crowdin {
   events: Event[];
 }
 

@@ -1,7 +1,7 @@
 {
   "name": "crowdin-discord-webhook",
   "author": "Marin Heđeš",
-  "description": "Cloudflare worker for forwarding Crowdin webhooks to Discord",
+  "description": "Cloudflare worker for forwarding Crowdin events to Discord.",
   "license": "MIT",
   "version": "1.0.0",
   "devDependencies": {

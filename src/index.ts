@@ -1,4 +1,4 @@
-import { CrowdinAPIResponse } from "../types/crowdin";
+import { Crowdin } from "../types/crowdin";
 import { Embeds } from "../types/embed";
 
 addEventListener("fetch", (event: FetchEvent) => {
@@ -6,7 +6,7 @@ addEventListener("fetch", (event: FetchEvent) => {
 });
 
 async function handleRequest(request: Request) {
-  const crowdin: CrowdinAPIResponse = await request.json();
+  const crowdin: Crowdin = await request.json();
   const path: string = new URL(request.url).pathname;
   if ((request.method === "POST" && request.body !== undefined) || null) {
     switch (crowdin.events[0].event) {
