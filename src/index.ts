@@ -325,7 +325,11 @@ async function handleRequest(request: Request) {
             fields: [
               {
                 name: "Language",
-                value: `:flag_${crowdin.events[0].translation.targetLanguage.twoLettersCode}: **${crowdin.events[0].translation.targetLanguage.name}** (${crowdin.events[0].translation.targetLanguage.locale})`,
+                value: `:flag_${crowdin.events[0].translation.targetLanguage.locale.substring(
+                  3,
+                )}: **${crowdin.events[0].translation.targetLanguage.name}** (${
+                  crowdin.events[0].translation.targetLanguage.locale
+                })`,
               },
               {
                 name: "Suggested translation",
@@ -356,7 +360,11 @@ async function handleRequest(request: Request) {
             fields: [
               {
                 name: "Language",
-                value: `:flag_${crowdin.events[0].translation.targetLanguage.twoLettersCode}: **${crowdin.events[0].translation.targetLanguage.name}** (${crowdin.events[0].translation.targetLanguage.locale})`,
+                value: `:flag_${crowdin.events[0].translation.targetLanguage.locale.substring(
+                  3,
+                )}: **${crowdin.events[0].translation.targetLanguage.name}** (${
+                  crowdin.events[0].translation.targetLanguage.locale
+                })`,
               },
               {
                 name: "Updated suggested translation",
@@ -387,7 +395,11 @@ async function handleRequest(request: Request) {
             fields: [
               {
                 name: "Language",
-                value: `:flag_${crowdin.events[0].translation.targetLanguage.twoLettersCode}: **${crowdin.events[0].translation.targetLanguage.name}** (${crowdin.events[0].translation.targetLanguage.locale})`,
+                value: `:flag_${crowdin.events[0].translation.targetLanguage.locale.substring(
+                  3,
+                )}: **${crowdin.events[0].translation.targetLanguage.name}** (${
+                  crowdin.events[0].translation.targetLanguage.locale
+                })`,
               },
               {
                 name: "Deleted suggested translation",
@@ -418,7 +430,11 @@ async function handleRequest(request: Request) {
             fields: [
               {
                 name: "Language",
-                value: `:flag_${crowdin.events[0].translation.targetLanguage.twoLettersCode}: **${crowdin.events[0].translation.targetLanguage.name}** (${crowdin.events[0].translation.targetLanguage.locale})`,
+                value: `:flag_${crowdin.events[0].translation.targetLanguage.locale.substring(
+                  3,
+                )}: **${crowdin.events[0].translation.targetLanguage.name}** (${
+                  crowdin.events[0].translation.targetLanguage.locale
+                })`,
               },
               {
                 name: "Approved suggested translation",
@@ -449,7 +465,11 @@ async function handleRequest(request: Request) {
             fields: [
               {
                 name: "Language",
-                value: `:flag_${crowdin.events[0].translation.targetLanguage.twoLettersCode}: **${crowdin.events[0].translation.targetLanguage.name}** (${crowdin.events[0].translation.targetLanguage.locale})`,
+                value: `:flag_${crowdin.events[0].translation.targetLanguage.locale.substring(
+                  3,
+                )}: **${crowdin.events[0].translation.targetLanguage.name}** (${
+                  crowdin.events[0].translation.targetLanguage.locale
+                })`,
               },
               {
                 name: "Disapproved suggested translation",
