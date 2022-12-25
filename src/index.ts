@@ -406,7 +406,7 @@ async function handleRequest(request: Request) {
         await sendWebhook(path, [
           {
             title: "Suggested translation approved",
-            description: `**${crowdin.events[0].translation.user.username}** has approved a suggestion for the **${crowdin.events[0].translation.string.project.name}** string in the **${crowdin.events[0].translation.string.identifier}** file in the **${crowdin.events[0].translation.string.project.name}** project.`,
+            description: `**${crowdin.events[0].translation.user.username}** has approved a suggestion for the **${crowdin.events[0].translation.string.identifier}** string in the **${crowdin.events[0].translation.string.file.name}** file in the **${crowdin.events[0].translation.string.project.name}** project.`,
             author: {
               name: crowdin.events[0].translation.string.project.name,
               url: crowdin.events[0].translation.string.url,
@@ -437,7 +437,7 @@ async function handleRequest(request: Request) {
         await sendWebhook(path, [
           {
             title: "Suggested translation disapproved",
-            description: `**${crowdin.events[0].translation.user.username}** has disapproved a suggestion for the **${crowdin.events[0].translation.string.project.name}** string in the **${crowdin.events[0].translation.string.identifier}** file in the **${crowdin.events[0].translation.string.project.name}** project.`,
+            description: `**${crowdin.events[0].translation.user.username}** has disapproved a suggestion for the **${crowdin.events[0].translation.string.identifier}** string in the **${crowdin.events[0].translation.string.file.name}** file in the **${crowdin.events[0].translation.string.project.name}** project.`,
             author: {
               name: crowdin.events[0].translation.string.project.name,
               url: crowdin.events[0].translation.string.url,
