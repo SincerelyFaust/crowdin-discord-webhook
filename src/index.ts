@@ -8,6 +8,21 @@ addEventListener("fetch", (event: FetchEvent) => {
 async function handleRequest(request: Request) {
   const crowdin: Crowdin = await request.json();
   const path: string = new URL(request.url).pathname;
+
+  const crowdinLogo =
+    "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png";
+  const footer = {
+    text: "Crowdin • ⚡ marinhedes.com/cdw",
+    icon_url: crowdinLogo,
+  };
+  const enum Colors {
+    GREEN = 65304,
+    ORANGE = 16748032,
+    YELLOW = 15924992,
+    RED = 16711680,
+  }
+  const date = new Date().toISOString();
+
   if ((request.method === "POST" && request.body !== undefined) || null) {
     switch (crowdin.events[0].event) {
       case "file.translated":
@@ -19,16 +34,11 @@ async function handleRequest(request: Request) {
             author: {
               name: crowdin.events[0].file.project.name,
               url: crowdin.events[0].file.project.url,
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
+              icon_url: crowdinLogo,
             },
-            color: 65304,
-            timestamp: new Date().toISOString(),
-            footer: {
-              text: "Crowdin • ⚡ marinhedes.com/cdw",
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
-            },
+            color: Colors.GREEN,
+            timestamp: date,
+            footer,
           },
         ]);
         break;
@@ -41,16 +51,11 @@ async function handleRequest(request: Request) {
             author: {
               name: crowdin.events[0].file.project.name,
               url: crowdin.events[0].file.project.url,
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
+              icon_url: crowdinLogo,
             },
-            color: 65304,
-            timestamp: new Date().toISOString(),
-            footer: {
-              text: "Crowdin • ⚡ marinhedes.com/cdw",
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
-            },
+            color: Colors.GREEN,
+            timestamp: date,
+            footer,
           },
         ]);
         break;
@@ -62,16 +67,11 @@ async function handleRequest(request: Request) {
             author: {
               name: crowdin.events[0].file.project.name,
               url: crowdin.events[0].file.project.url,
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
+              icon_url: crowdinLogo,
             },
-            color: 65304,
-            timestamp: new Date().toISOString(),
-            footer: {
-              text: "Crowdin • ⚡ marinhedes.com/cdw",
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
-            },
+            color: Colors.GREEN,
+            timestamp: date,
+            footer,
           },
         ]);
         break;
@@ -83,16 +83,11 @@ async function handleRequest(request: Request) {
             author: {
               name: crowdin.events[0].file.project.name,
               url: crowdin.events[0].file.project.url,
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
+              icon_url: crowdinLogo,
             },
-            color: 16748032,
-            timestamp: new Date().toISOString(),
-            footer: {
-              text: "Crowdin • ⚡ marinhedes.com/cdw",
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
-            },
+            color: Colors.ORANGE,
+            timestamp: date,
+            footer,
           },
         ]);
         break;
@@ -104,16 +99,11 @@ async function handleRequest(request: Request) {
             author: {
               name: crowdin.events[0].file.project.name,
               url: crowdin.events[0].file.project.url,
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
+              icon_url: crowdinLogo,
             },
-            color: 15924992,
-            timestamp: new Date().toISOString(),
-            footer: {
-              text: "Crowdin • ⚡ marinhedes.com/cdw",
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
-            },
+            color: Colors.YELLOW,
+            timestamp: date,
+            footer,
           },
         ]);
         break;
@@ -125,16 +115,11 @@ async function handleRequest(request: Request) {
             author: {
               name: crowdin.events[0].file.project.name,
               url: crowdin.events[0].file.project.url,
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
+              icon_url: crowdinLogo,
             },
-            color: 16711680,
-            timestamp: new Date().toISOString(),
-            footer: {
-              text: "Crowdin • ⚡ marinhedes.com/cdw",
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
-            },
+            color: Colors.RED,
+            timestamp: date,
+            footer,
           },
         ]);
         break;
@@ -146,16 +131,11 @@ async function handleRequest(request: Request) {
             author: {
               name: crowdin.events[0].project.name,
               url: crowdin.events[0].project.url,
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
+              icon_url: crowdinLogo,
             },
-            color: 65304,
-            timestamp: new Date().toISOString(),
-            footer: {
-              text: "Crowdin • ⚡ marinhedes.com/cdw",
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
-            },
+            color: Colors.GREEN,
+            timestamp: date,
+            footer,
           },
         ]);
         break;
@@ -167,16 +147,11 @@ async function handleRequest(request: Request) {
             author: {
               name: crowdin.events[0].project.name,
               url: crowdin.events[0].project.url,
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
+              icon_url: crowdinLogo,
             },
-            color: 65304,
-            timestamp: new Date().toISOString(),
-            footer: {
-              text: "Crowdin • ⚡ marinhedes.com/cdw",
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
-            },
+            color: Colors.GREEN,
+            timestamp: date,
+            footer,
           },
         ]);
         break;
@@ -188,16 +163,11 @@ async function handleRequest(request: Request) {
             author: {
               name: crowdin.events[0].build.project.name,
               url: crowdin.events[0].build.downloadUrl,
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
+              icon_url: crowdinLogo,
             },
-            color: 65304,
-            timestamp: new Date().toISOString(),
-            footer: {
-              text: "Crowdin • ⚡ marinhedes.com/cdw",
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
-            },
+            color: Colors.GREEN,
+            timestamp: date,
+            footer,
           },
         ]);
         break;
@@ -209,22 +179,17 @@ async function handleRequest(request: Request) {
             author: {
               name: crowdin.events[0].newTranslation.string.project.name,
               url: crowdin.events[0].newTranslation.string.url,
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
+              icon_url: crowdinLogo,
             },
-            color: 16748032,
-            timestamp: new Date().toISOString(),
+            color: Colors.ORANGE,
+            timestamp: date,
             fields: [
               {
                 name: "New translation",
                 value: crowdin.events[0].newTranslation.string.text,
               },
             ],
-            footer: {
-              text: "Crowdin • ⚡ marinhedes.com/cdw",
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
-            },
+            footer,
           },
         ]);
         break;
@@ -236,22 +201,17 @@ async function handleRequest(request: Request) {
             author: {
               name: crowdin.events[0].string.project.name,
               url: crowdin.events[0].string.url,
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
+              icon_url: crowdinLogo,
             },
-            color: 65304,
-            timestamp: new Date().toISOString(),
+            color: Colors.GREEN,
+            timestamp: date,
             fields: [
               {
                 name: "New string",
                 value: crowdin.events[0].string.text,
               },
             ],
-            footer: {
-              text: "Crowdin • ⚡ marinhedes.com/cdw",
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
-            },
+            footer,
           },
         ]);
         break;
@@ -263,22 +223,17 @@ async function handleRequest(request: Request) {
             author: {
               name: crowdin.events[0].string.project.name,
               url: crowdin.events[0].string.url,
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
+              icon_url: crowdinLogo,
             },
-            color: 16748032,
-            timestamp: new Date().toISOString(),
+            color: Colors.ORANGE,
+            timestamp: date,
             fields: [
               {
                 name: "Updated string",
                 value: crowdin.events[0].string.text,
               },
             ],
-            footer: {
-              text: "Crowdin • ⚡ marinhedes.com/cdw",
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
-            },
+            footer,
           },
         ]);
         break;
@@ -290,22 +245,17 @@ async function handleRequest(request: Request) {
             author: {
               name: crowdin.events[0].string.project.name,
               url: crowdin.events[0].string.url,
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
+              icon_url: crowdinLogo,
             },
-            color: 16711680,
-            timestamp: new Date().toISOString(),
+            color: Colors.RED,
+            timestamp: date,
             fields: [
               {
                 name: "Deleted string",
                 value: crowdin.events[0].string.text,
               },
             ],
-            footer: {
-              text: "Crowdin • ⚡ marinhedes.com/cdw",
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
-            },
+            footer,
           },
         ]);
         break;
@@ -317,11 +267,10 @@ async function handleRequest(request: Request) {
             author: {
               name: crowdin.events[0].translation.string.project.name,
               url: crowdin.events[0].translation.string.url,
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
+              icon_url: crowdinLogo,
             },
-            color: 65304,
-            timestamp: new Date().toISOString(),
+            color: Colors.GREEN,
+            timestamp: date,
             fields: [
               {
                 name: "Language",
@@ -336,11 +285,7 @@ async function handleRequest(request: Request) {
                 value: crowdin.events[0].translation.string.text,
               },
             ],
-            footer: {
-              text: "Crowdin • ⚡ marinhedes.com/cdw",
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
-            },
+            footer,
           },
         ]);
         break;
@@ -352,11 +297,10 @@ async function handleRequest(request: Request) {
             author: {
               name: crowdin.events[0].translation.string.project.name,
               url: crowdin.events[0].translation.string.url,
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
+              icon_url: crowdinLogo,
             },
-            color: 16748032,
-            timestamp: new Date().toISOString(),
+            color: Colors.ORANGE,
+            timestamp: date,
             fields: [
               {
                 name: "Language",
@@ -371,11 +315,7 @@ async function handleRequest(request: Request) {
                 value: crowdin.events[0].translation.string.text,
               },
             ],
-            footer: {
-              text: "Crowdin • ⚡ marinhedes.com/cdw",
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
-            },
+            footer,
           },
         ]);
         break;
@@ -387,11 +327,10 @@ async function handleRequest(request: Request) {
             author: {
               name: crowdin.events[0].translation.string.project.name,
               url: crowdin.events[0].translation.string.url,
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
+              icon_url: crowdinLogo,
             },
-            color: 16711680,
-            timestamp: new Date().toISOString(),
+            color: Colors.RED,
+            timestamp: date,
             fields: [
               {
                 name: "Language",
@@ -406,11 +345,7 @@ async function handleRequest(request: Request) {
                 value: crowdin.events[0].translation.string.text,
               },
             ],
-            footer: {
-              text: "Crowdin • ⚡ marinhedes.com/cdw",
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
-            },
+            footer,
           },
         ]);
         break;
@@ -422,11 +357,10 @@ async function handleRequest(request: Request) {
             author: {
               name: crowdin.events[0].translation.string.project.name,
               url: crowdin.events[0].translation.string.url,
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
+              icon_url: crowdinLogo,
             },
-            color: 65304,
-            timestamp: new Date().toISOString(),
+            color: Colors.GREEN,
+            timestamp: date,
             fields: [
               {
                 name: "Language",
@@ -441,11 +375,7 @@ async function handleRequest(request: Request) {
                 value: crowdin.events[0].translation.string.text,
               },
             ],
-            footer: {
-              text: "Crowdin • ⚡ marinhedes.com/cdw",
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
-            },
+            footer,
           },
         ]);
         break;
@@ -457,11 +387,10 @@ async function handleRequest(request: Request) {
             author: {
               name: crowdin.events[0].translation.string.project.name,
               url: crowdin.events[0].translation.string.url,
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
+              icon_url: crowdinLogo,
             },
-            color: 16711680,
-            timestamp: new Date().toISOString(),
+            color: Colors.RED,
+            timestamp: date,
             fields: [
               {
                 name: "Language",
@@ -476,11 +405,7 @@ async function handleRequest(request: Request) {
                 value: crowdin.events[0].translation.string.text,
               },
             ],
-            footer: {
-              text: "Crowdin • ⚡ marinhedes.com/cdw",
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
-            },
+            footer,
           },
         ]);
         break;
@@ -492,11 +417,10 @@ async function handleRequest(request: Request) {
             author: {
               name: crowdin.events[0].comment.string.project.name,
               url: crowdin.events[0].comment.string.url,
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
+              icon_url: crowdinLogo,
             },
-            color: 65304,
-            timestamp: new Date().toISOString(),
+            color: Colors.GREEN,
+            timestamp: date,
             fields: [
               {
                 name: "Language",
@@ -507,11 +431,7 @@ async function handleRequest(request: Request) {
                 value: crowdin.events[0].comment.text,
               },
             ],
-            footer: {
-              text: "Crowdin • ⚡ marinhedes.com/cdw",
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
-            },
+            footer,
           },
         ]);
         break;
@@ -523,11 +443,10 @@ async function handleRequest(request: Request) {
             author: {
               name: crowdin.events[0].comment.string.project.name,
               url: crowdin.events[0].comment.string.url,
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
+              icon_url: crowdinLogo,
             },
-            color: 16748032,
-            timestamp: new Date().toISOString(),
+            color: Colors.ORANGE,
+            timestamp: date,
             fields: [
               {
                 name: "Language",
@@ -538,11 +457,7 @@ async function handleRequest(request: Request) {
                 value: crowdin.events[0].comment.text,
               },
             ],
-            footer: {
-              text: "Crowdin • ⚡ marinhedes.com/cdw",
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
-            },
+            footer,
           },
         ]);
         break;
@@ -554,11 +469,10 @@ async function handleRequest(request: Request) {
             author: {
               name: crowdin.events[0].comment.string.project.name,
               url: crowdin.events[0].comment.string.url,
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
+              icon_url: crowdinLogo,
             },
-            color: 65304,
-            timestamp: new Date().toISOString(),
+            color: Colors.GREEN,
+            timestamp: date,
             fields: [
               {
                 name: "Language",
@@ -569,11 +483,7 @@ async function handleRequest(request: Request) {
                 value: crowdin.events[0].comment.text,
               },
             ],
-            footer: {
-              text: "Crowdin • ⚡ marinhedes.com/cdw",
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
-            },
+            footer,
           },
         ]);
         break;
@@ -585,11 +495,10 @@ async function handleRequest(request: Request) {
             author: {
               name: crowdin.events[0].comment.string.project.name,
               url: crowdin.events[0].comment.string.url,
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
+              icon_url: crowdinLogo,
             },
-            color: 16711680,
-            timestamp: new Date().toISOString(),
+            color: Colors.RED,
+            timestamp: date,
             fields: [
               {
                 name: "Language",
@@ -600,11 +509,7 @@ async function handleRequest(request: Request) {
                 value: crowdin.events[0].comment.text,
               },
             ],
-            footer: {
-              text: "Crowdin • ⚡ marinhedes.com/cdw",
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
-            },
+            footer,
           },
         ]);
         break;
@@ -616,11 +521,10 @@ async function handleRequest(request: Request) {
             author: {
               name: crowdin.events[0].task.project.name,
               url: crowdin.events[0].task.translationUrl,
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
+              icon_url: crowdinLogo,
             },
-            color: 65304,
-            timestamp: new Date().toISOString(),
+            color: Colors.GREEN,
+            timestamp: date,
             fields: [
               {
                 name: "Task creator",
@@ -646,11 +550,7 @@ async function handleRequest(request: Request) {
                 inline: true,
               },
             ],
-            footer: {
-              text: "Crowdin • ⚡ marinhedes.com/cdw",
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
-            },
+            footer,
           },
         ]);
         break;
@@ -662,11 +562,10 @@ async function handleRequest(request: Request) {
             author: {
               name: crowdin.events[0].task.project.name,
               url: crowdin.events[0].task.translationUrl,
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
+              icon_url: crowdinLogo,
             },
-            color: 16748032,
-            timestamp: new Date().toISOString(),
+            color: Colors.ORANGE,
+            timestamp: date,
             fields: [
               {
                 name: "Task creator",
@@ -697,11 +596,7 @@ async function handleRequest(request: Request) {
                 inline: true,
               },
             ],
-            footer: {
-              text: "Crowdin • ⚡ marinhedes.com/cdw",
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
-            },
+            footer,
           },
         ]);
         break;
@@ -713,11 +608,10 @@ async function handleRequest(request: Request) {
             author: {
               name: crowdin.events[0].task.project.name,
               url: crowdin.events[0].task.translationUrl,
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
+              icon_url: crowdinLogo,
             },
-            color: 16711680,
-            timestamp: new Date().toISOString(),
+            color: Colors.RED,
+            timestamp: date,
             fields: [
               {
                 name: "Task creator",
@@ -743,11 +637,7 @@ async function handleRequest(request: Request) {
                 inline: true,
               },
             ],
-            footer: {
-              text: "Crowdin • ⚡ marinhedes.com/cdw",
-              icon_url:
-                "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
-            },
+            footer,
           },
         ]);
         break;
@@ -765,13 +655,9 @@ async function handleRequest(request: Request) {
         url: "https://github.com/sincerelyfaust",
         icon_url: "https://avatars.githubusercontent.com/u/44751736?v=4",
       },
-      color: 65304,
-      timestamp: new Date().toISOString(),
-      footer: {
-        text: "Crowdin • ⚡ marinhedes.com/cdw",
-        icon_url:
-          "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
-      },
+      color: Colors.RED,
+      timestamp: date,
+      footer,
     },
   ]);
   return new Response("Error", { status: 500 });
