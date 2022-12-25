@@ -21,7 +21,7 @@ async function handleRequest(request: Request) {
     YELLOW = 15924992,
     RED = 16711680,
   }
-  const date = new Date().toISOString();
+  const timestamp = new Date().toISOString();
 
   if ((request.method === "POST" && request.body !== undefined) || null) {
     switch (crowdin.events[0].event) {
@@ -37,7 +37,7 @@ async function handleRequest(request: Request) {
               icon_url: crowdinLogo,
             },
             color: Colors.GREEN,
-            timestamp: date,
+            timestamp,
             footer,
           },
         ]);
@@ -54,7 +54,7 @@ async function handleRequest(request: Request) {
               icon_url: crowdinLogo,
             },
             color: Colors.GREEN,
-            timestamp: date,
+            timestamp,
             footer,
           },
         ]);
@@ -70,7 +70,7 @@ async function handleRequest(request: Request) {
               icon_url: crowdinLogo,
             },
             color: Colors.GREEN,
-            timestamp: date,
+            timestamp,
             footer,
           },
         ]);
@@ -86,7 +86,7 @@ async function handleRequest(request: Request) {
               icon_url: crowdinLogo,
             },
             color: Colors.ORANGE,
-            timestamp: date,
+            timestamp,
             footer,
           },
         ]);
@@ -102,7 +102,7 @@ async function handleRequest(request: Request) {
               icon_url: crowdinLogo,
             },
             color: Colors.YELLOW,
-            timestamp: date,
+            timestamp,
             footer,
           },
         ]);
@@ -118,7 +118,7 @@ async function handleRequest(request: Request) {
               icon_url: crowdinLogo,
             },
             color: Colors.RED,
-            timestamp: date,
+            timestamp,
             footer,
           },
         ]);
@@ -134,7 +134,7 @@ async function handleRequest(request: Request) {
               icon_url: crowdinLogo,
             },
             color: Colors.GREEN,
-            timestamp: date,
+            timestamp,
             footer,
           },
         ]);
@@ -150,7 +150,7 @@ async function handleRequest(request: Request) {
               icon_url: crowdinLogo,
             },
             color: Colors.GREEN,
-            timestamp: date,
+            timestamp,
             footer,
           },
         ]);
@@ -166,7 +166,7 @@ async function handleRequest(request: Request) {
               icon_url: crowdinLogo,
             },
             color: Colors.GREEN,
-            timestamp: date,
+            timestamp,
             footer,
           },
         ]);
@@ -182,7 +182,7 @@ async function handleRequest(request: Request) {
               icon_url: crowdinLogo,
             },
             color: Colors.ORANGE,
-            timestamp: date,
+            timestamp,
             fields: [
               {
                 name: "New translation",
@@ -204,7 +204,7 @@ async function handleRequest(request: Request) {
               icon_url: crowdinLogo,
             },
             color: Colors.GREEN,
-            timestamp: date,
+            timestamp,
             fields: [
               {
                 name: "New string",
@@ -226,7 +226,7 @@ async function handleRequest(request: Request) {
               icon_url: crowdinLogo,
             },
             color: Colors.ORANGE,
-            timestamp: date,
+            timestamp,
             fields: [
               {
                 name: "Updated string",
@@ -248,7 +248,7 @@ async function handleRequest(request: Request) {
               icon_url: crowdinLogo,
             },
             color: Colors.RED,
-            timestamp: date,
+            timestamp,
             fields: [
               {
                 name: "Deleted string",
@@ -270,7 +270,7 @@ async function handleRequest(request: Request) {
               icon_url: crowdinLogo,
             },
             color: Colors.GREEN,
-            timestamp: date,
+            timestamp,
             fields: [
               {
                 name: "Language",
@@ -300,7 +300,7 @@ async function handleRequest(request: Request) {
               icon_url: crowdinLogo,
             },
             color: Colors.ORANGE,
-            timestamp: date,
+            timestamp,
             fields: [
               {
                 name: "Language",
@@ -330,7 +330,7 @@ async function handleRequest(request: Request) {
               icon_url: crowdinLogo,
             },
             color: Colors.RED,
-            timestamp: date,
+            timestamp,
             fields: [
               {
                 name: "Language",
@@ -360,7 +360,7 @@ async function handleRequest(request: Request) {
               icon_url: crowdinLogo,
             },
             color: Colors.GREEN,
-            timestamp: date,
+            timestamp,
             fields: [
               {
                 name: "Language",
@@ -390,7 +390,7 @@ async function handleRequest(request: Request) {
               icon_url: crowdinLogo,
             },
             color: Colors.RED,
-            timestamp: date,
+            timestamp,
             fields: [
               {
                 name: "Language",
@@ -420,7 +420,7 @@ async function handleRequest(request: Request) {
               icon_url: crowdinLogo,
             },
             color: Colors.GREEN,
-            timestamp: date,
+            timestamp,
             fields: [
               {
                 name: "Language",
@@ -446,7 +446,7 @@ async function handleRequest(request: Request) {
               icon_url: crowdinLogo,
             },
             color: Colors.ORANGE,
-            timestamp: date,
+            timestamp,
             fields: [
               {
                 name: "Language",
@@ -472,7 +472,7 @@ async function handleRequest(request: Request) {
               icon_url: crowdinLogo,
             },
             color: Colors.GREEN,
-            timestamp: date,
+            timestamp,
             fields: [
               {
                 name: "Language",
@@ -498,7 +498,7 @@ async function handleRequest(request: Request) {
               icon_url: crowdinLogo,
             },
             color: Colors.RED,
-            timestamp: date,
+            timestamp,
             fields: [
               {
                 name: "Language",
@@ -524,7 +524,7 @@ async function handleRequest(request: Request) {
               icon_url: crowdinLogo,
             },
             color: Colors.GREEN,
-            timestamp: date,
+            timestamp,
             fields: [
               {
                 name: "Task creator",
@@ -565,7 +565,7 @@ async function handleRequest(request: Request) {
               icon_url: crowdinLogo,
             },
             color: Colors.ORANGE,
-            timestamp: date,
+            timestamp,
             fields: [
               {
                 name: "Task creator",
@@ -611,7 +611,7 @@ async function handleRequest(request: Request) {
               icon_url: crowdinLogo,
             },
             color: Colors.RED,
-            timestamp: date,
+            timestamp,
             fields: [
               {
                 name: "Task creator",
@@ -656,7 +656,7 @@ async function handleRequest(request: Request) {
         icon_url: "https://avatars.githubusercontent.com/u/44751736?v=4",
       },
       color: Colors.RED,
-      timestamp: date,
+      timestamp,
       footer,
     },
   ]);
