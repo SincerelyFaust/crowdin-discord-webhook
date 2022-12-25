@@ -29,7 +29,13 @@ async function handleRequest(request: Request) {
         await sendWebhook(path, [
           {
             title: "File fully translated",
-            description: `**${crowdin.events[0].file.name}** is now fully translated to :flag_${crowdin.events[0].targetLanguage.twoLettersCode}: **${crowdin.events[0].targetLanguage.name}** (${crowdin.events[0].targetLanguage.locale}) language.`,
+            description: `**${
+              crowdin.events[0].file.name
+            }** is now fully translated to :flag_${crowdin.events[0].targetLanguage.locale
+              .substring(3)
+              .toLowerCase()}: **${crowdin.events[0].targetLanguage.name}** (${
+              crowdin.events[0].targetLanguage.locale
+            }) language.`,
             url: `https://crowdin.com/translate/${crowdin.events[0].file.project.identifier}/${crowdin.events[0].file.id}/en-${crowdin.events[0].targetLanguage.id}`,
             author: {
               name: crowdin.events[0].file.project.name,
@@ -46,7 +52,13 @@ async function handleRequest(request: Request) {
         await sendWebhook(path, [
           {
             title: "File fully reviewed",
-            description: `The **${crowdin.events[0].file.name}** translation for :flag_${crowdin.events[0].targetLanguage.twoLettersCode}: **${crowdin.events[0].targetLanguage.name}** (${crowdin.events[0].targetLanguage.locale}) is now fully approved.`,
+            description: `The **${
+              crowdin.events[0].file.name
+            }** translation for :flag_${crowdin.events[0].targetLanguage.locale
+              .substring(3)
+              .toLowerCase()}: **${crowdin.events[0].targetLanguage.name}** (${
+              crowdin.events[0].targetLanguage.locale
+            }) is now fully approved.`,
             url: `https://crowdin.com/translate/${crowdin.events[0].file.project.identifier}/${crowdin.events[0].file.id}/en-${crowdin.events[0].targetLanguage.id}`,
             author: {
               name: crowdin.events[0].file.project.name,
@@ -175,7 +187,19 @@ async function handleRequest(request: Request) {
         await sendWebhook(path, [
           {
             title: "Exported translation updated",
-            description: `The translation string **${crowdin.events[0].newTranslation.string.identifier}** for :flag_${crowdin.events[0].newTranslation.targetLanguage.twoLettersCode}: **${crowdin.events[0].newTranslation.targetLanguage.name}** (${crowdin.events[0].newTranslation.targetLanguage.locale}) language in **${crowdin.events[0].newTranslation.string.project.name}** project has been updated by **${crowdin.events[0].newTranslation.user.username}**.`,
+            description: `The translation string **${
+              crowdin.events[0].newTranslation.string.identifier
+            }** for :flag_${crowdin.events[0].newTranslation.targetLanguage.locale
+              .substring(3)
+              .toLowerCase()}: **${
+              crowdin.events[0].newTranslation.targetLanguage.name
+            }** (${
+              crowdin.events[0].newTranslation.targetLanguage.locale
+            }) language in **${
+              crowdin.events[0].newTranslation.string.project.name
+            }** project has been updated by **${
+              crowdin.events[0].newTranslation.user.username
+            }**.`,
             author: {
               name: crowdin.events[0].newTranslation.string.project.name,
               url: crowdin.events[0].newTranslation.string.url,
@@ -424,7 +448,11 @@ async function handleRequest(request: Request) {
             fields: [
               {
                 name: "Language",
-                value: `:flag_${crowdin.events[0].comment.targetLanguage.twoLettersCode}: **${crowdin.events[0].comment.targetLanguage.name}** (${crowdin.events[0].comment.targetLanguage.locale})`,
+                value: `:flag_${crowdin.events[0].comment.targetLanguage.locale
+                  .substring(3)
+                  .toLowerCase()}: **${
+                  crowdin.events[0].comment.targetLanguage.name
+                }** (${crowdin.events[0].comment.targetLanguage.locale})`,
               },
               {
                 name: "Comment",
@@ -450,7 +478,11 @@ async function handleRequest(request: Request) {
             fields: [
               {
                 name: "Language",
-                value: `:flag_${crowdin.events[0].comment.targetLanguage.twoLettersCode}: **${crowdin.events[0].comment.targetLanguage.name}** (${crowdin.events[0].comment.targetLanguage.locale})`,
+                value: `:flag_${crowdin.events[0].comment.targetLanguage.locale
+                  .substring(3)
+                  .toLowerCase()}: **${
+                  crowdin.events[0].comment.targetLanguage.name
+                }** (${crowdin.events[0].comment.targetLanguage.locale})`,
               },
               {
                 name: "Comment",
@@ -476,7 +508,11 @@ async function handleRequest(request: Request) {
             fields: [
               {
                 name: "Language",
-                value: `:flag_${crowdin.events[0].comment.targetLanguage.twoLettersCode}: **${crowdin.events[0].comment.targetLanguage.name}** (${crowdin.events[0].comment.targetLanguage.locale})`,
+                value: `:flag_${crowdin.events[0].comment.targetLanguage.locale
+                  .substring(3)
+                  .toLowerCase()}: **${
+                  crowdin.events[0].comment.targetLanguage.name
+                }** (${crowdin.events[0].comment.targetLanguage.locale})`,
               },
               {
                 name: "Comment",
@@ -502,7 +538,11 @@ async function handleRequest(request: Request) {
             fields: [
               {
                 name: "Language",
-                value: `:flag_${crowdin.events[0].comment.targetLanguage.twoLettersCode}: **${crowdin.events[0].comment.targetLanguage.name}** (${crowdin.events[0].comment.targetLanguage.locale})`,
+                value: `:flag_${crowdin.events[0].comment.targetLanguage.locale
+                  .substring(3)
+                  .toLowerCase()}: **${
+                  crowdin.events[0].comment.targetLanguage.name
+                }** (${crowdin.events[0].comment.targetLanguage.locale})`,
               },
               {
                 name: "Deleted comment/isuse",
