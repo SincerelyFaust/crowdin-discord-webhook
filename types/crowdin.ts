@@ -14,8 +14,7 @@ export interface Project {
   lastActivity: Date;
   description: string;
   url: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  cname?: any;
+  cname: string;
   logo: string;
   isExternal: boolean;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -47,8 +46,7 @@ export interface TargetLanguage {
   osxCode: string;
   osxLocale: string;
   textDirection: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  dialectOf?: any;
+  dialectOf: string;
 }
 
 export interface Build {
@@ -212,8 +210,7 @@ export interface SourceLanguage {
   osxCode: string;
   osxLocale: string;
   textDirection: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  dialectOf?: any;
+  dialectOf: string;
 }
 
 export interface Event {
