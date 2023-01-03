@@ -1,9 +1,10 @@
-# crowdin-discord-webhook
+![Hero](.github/images/hero.png)
 
-Cloudflare worker for forwarding Crowdin events to Discord.
+# crowdin-discord-webhook (CDW)
 
-To use this project, you do not need to host it, you can simply follow the simple instructions [here](#usage).
-But if you wish to run your own, I have also included the instructions for that, too, and they can be found [here](#self-hosting).
+CDW is a Cloudflare worker for forwarding Crowdin events to Discord.
+It forwards all events from Crowdin to Cloudflare where they are received, formatted and sent to your Discord server so you can get notified about new translations, suggestions, tasks, comments and more.
+To use this project, **you do not need** to **host** it on a **server**, you can simply follow the instructions below and get it running in no time. However, for those looking to host their own, instructions on self-hosting are also included.
 
 ## Supported events
 
