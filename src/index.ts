@@ -710,7 +710,7 @@ async function handleRequest(request: Request) {
   return new Response("Error", { status: 500 });
 }
 
-async function sendWebhook(path: string, event: DiscordEvent) {
+async function sendWebhook(path: string, embeds: DiscordEvent) {
   return fetch(`https://discordapp.com/api/webhooks${path}`, {
     method: "POST",
     headers: {
@@ -720,7 +720,7 @@ async function sendWebhook(path: string, event: DiscordEvent) {
       username: "Crowdin",
       avatar_url:
         "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
-      event,
+      embeds,
     }),
   });
 }
