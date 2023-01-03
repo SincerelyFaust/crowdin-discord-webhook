@@ -1,4 +1,4 @@
-export interface Crowdin {
+export interface CrowdinEvent {
   events: Event[];
 }
 

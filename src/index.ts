@@ -1,12 +1,12 @@
-import { Crowdin } from "../types/crowdin";
-import { Embeds } from "../types/embed";
+import { CrowdinEvent } from "../types/crowdin";
+import { DiscordEvent } from "../types/discord";
 
 addEventListener("fetch", (event: FetchEvent) => {
   return event.respondWith(handleRequest(event.request));
 });
 
 async function handleRequest(request: Request) {
-  const crowdin: Crowdin = await request.json();
+  const crowdin: CrowdinEvent = await request.json();
   const path: string = new URL(request.url).pathname;
 
   const crowdinLogo =
@@ -23,8 +23,9 @@ async function handleRequest(request: Request) {
   }
   const timestamp = new Date().toISOString();
 
-  if ((request.method === "POST" && request.body !== undefined) || null) {
+  if (request.method === "POST" && (request.body !== undefined || null)) {
     switch (crowdin.events[0].event) {
+      /* File events */
       case "file.translated":
         await sendWebhook(path, [
           {
@@ -135,6 +136,7 @@ async function handleRequest(request: Request) {
           },
         ]);
         break;
+      /* Project events */
       case "project.translated":
         await sendWebhook(path, [
           {
@@ -183,6 +185,7 @@ async function handleRequest(request: Request) {
           },
         ]);
         break;
+      /* Exported translation events */
       case "translation.updated":
         await sendWebhook(path, [
           {
@@ -217,6 +220,7 @@ async function handleRequest(request: Request) {
           },
         ]);
         break;
+      /* Source string events */
       case "string.added":
         await sendWebhook(path, [
           {
@@ -283,6 +287,7 @@ async function handleRequest(request: Request) {
           },
         ]);
         break;
+      /* Suggested translation events */
       case "suggestion.added":
         await sendWebhook(path, [
           {
@@ -433,6 +438,7 @@ async function handleRequest(request: Request) {
           },
         ]);
         break;
+      /* Comment/issue events */
       case "stringComment.created":
         await sendWebhook(path, [
           {
@@ -553,6 +559,7 @@ async function handleRequest(request: Request) {
           },
         ]);
         break;
+      /* Task events */
       case "task.added":
         await sendWebhook(path, [
           {
@@ -703,7 +710,7 @@ async function handleRequest(request: Request) {
   return new Response("Error", { status: 500 });
 }
 
-async function sendWebhook(path: string, embeds: Embeds) {
+async function sendWebhook(path: string, event: DiscordEvent) {
   return fetch(`https://discordapp.com/api/webhooks${path}`, {
     method: "POST",
     headers: {
@@ -713,7 +720,7 @@ async function sendWebhook(path: string, embeds: Embeds) {
       username: "Crowdin",
       avatar_url:
         "https://support.crowdin.com/assets/logos/crowdin-dark-symbol.png",
-      embeds,
+      event,
     }),
   });
 }

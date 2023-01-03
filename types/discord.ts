@@ -1,4 +1,4 @@
-export type Embeds = Array<Embed>;
+export type DiscordEvent = Array<Embed>;
 
 export interface Embed {
   title: string;

@@ -52,3 +52,7 @@ pnpm run deploy
 This last step requires you to login into your Cloudflare account, once you do, it'll also ask for permissions for Wrangler.
 After you have authenticated, it will deploy a worker for you and if you wish to customize the name of the worker, change the `name` variable in [`wrangler.toml`](wrangler.toml).
 In your worker's project console, you can find the URL that you can use instead of the `https://cdw.marinhedes.com` URL specified for this project.
+
+## Credits
+
+- https://github.com/SwitchbladeBot/crowdin-discord-webhooks
