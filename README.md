@@ -4,7 +4,7 @@
 
 CDW is a Cloudflare worker for forwarding Crowdin events to Discord.
 It forwards all events from Crowdin to Cloudflare where they are received, formatted and sent to your Discord server so you can get notified about new translations, suggestions, tasks, comments and more.
-To use this project, **you do not need** to **host** it on a **server**, you can simply follow the instructions below and get it running in no time. However, for those looking to host their own, instructions on self-hosting are also included.
+To use this service, **you do not need** to **host** it on a **server**, you can simply follow the instructions below and get it running in no time. However, for those looking to host their own, instructions on self-hosting are also included.
 
 ## Supported events
 
